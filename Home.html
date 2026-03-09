@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FUN ZONE - The Most Entertaining Theme Park</title>
+  <script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+</script>
+  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ 
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  
+  <nav class="navbar">
+  <div class="logo">
+    <img src="imges/logo-image.png" alt="FUN ZONE" class="logo-img">
+  </div>
+
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="Home.html" class="active"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="experience.html"><i class="fas fa-rocket"></i><span>Experience</span></a></li>
+      <li><a href="leisure-dining.html"><i class="fas fa-utensils"></i><span>Leisure Dining</span></a></li>
+      <li><a href="park-characters.html"><i class="fas fa-mask"></i><span>Park Characters</span></a></li>
+      <li><a href="whats-up.html"><i class="fas fa-calendar-alt"></i><span>What's Up</span></a></li>
+      <li><a href="park-information.html"><i class="fas fa-info-circle"></i><span>Park Infomation</span></a></li>
+      <li><a href="business.html"><i class="fas fa-handshake"></i><span>Business Opportunities </span></a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i><span>Contact us</span></a></li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <button class="buy-tickets">Buy Tickets</button>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+  
+ 
+  
+<header class="herosection">
+  
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="imges\adventurepark (2).mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-cont">
+    <h1>The Most Entertaining Theme Park</h1>
+    <p>7 Internationally Themed Zones • Thrill Rides • 7 Wonders • Massive Food Court • Mascots & Hospitality</p>
+    <button class="cta-btn">Plan Your Adventure</button>
+  </div>
+
+</header>
+
+
+
+<section class="dore-section">
+  <div class="content-box">
+    <h2>Welcome To FUN ZONE</h2>
+    <p>
+      FUN ZONE is the most entertaining theme park offering 7 internationally themed zones,
+      thrilling rides, world wonders, mascots, and a massive food court.
+      A complete 360° experience for families and adventure lovers.
+    </p>
+  </div>
+</section>
+
+<section class="section thrill">
+  <div class="section-header">
+    <h2>Explore 7 International Zones</h2>
+    <p>FUN ZONE Theme Park offers thrilling rides, world wonders, kids activities, and adventure games for all ages. Experience a complete 360° family adventure.</p>
+  </div>
+
+  <div class="zone-container">
+
+    <div class="zone-card">
+      <h3>Thrill Rides</h3>
+      <p>Experience adrenaline pumping roller coasters.</p>
+      <div class="video-grid">
+        <video src="imges\8131-207209033_medium.mp4" autoplay loop muted playsinline></video>
+        <video src="imges\273546_medium.mp4" autoplay loop muted playsinline></video>
+        <video src="imges\30862-382770830_medium.mp4" autoplay loop muted playsinline></video>
+        <video src="imges\8131-207209033_medium.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <a href="#" class="zone-btn">Learn More</a>
+    </div>
+
+    <div class="zone-card">
+      <h3>7 Wonders</h3>
+      <p>Visit mini replicas of world wonders.</p>
+      <div class="video-grid">
+        <video src="videos/wonders1.mp4" autoplay loop muted playsinline></video>
+        <video src="videos/wonders2.mp4" autoplay loop muted playsinline></video>
+        <video src="videos/wonders3.mp4" autoplay loop muted playsinline></video>
+        <video src="videos/wonders4.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <a href="#" class="zone-btn">Learn More</a>
+    </div>
+
+    <div class="zone-card">
+      <h3>Kids Zone</h3>
+      <p>Fun and safe activities for children.</p>
+      <div class="video-grid">
+        <video src="imges\kids zone2 (1).webm" autoplay loop muted playsinline></video>
+        <video src="imges\kids zone2 (2).webm" autoplay loop muted playsinline></video>
+        <video src="imges\kids zone2 (3).webm" autoplay loop muted playsinline></video>
+        <video src="imges\kids zone.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <a href="#" class="zone-btn">Learn More</a>
+    </div>
+
+    <div class="zone-card">
+      <h3>Adventure Land</h3>
+      <p>Challenging obstacle and adventure games.</p>
+      <div class="video-grid">
+        <video src="imges\adventure1 (1).webm" autoplay loop muted playsinline></video>
+        <video src="imges\adventure1 (2).webm" autoplay loop muted playsinline></video>
+        <video src="imges\adventure1 (3).webm" autoplay loop muted playsinline></video>
+        <video src="imges\adventure1 (4).webm" autoplay loop muted playsinline></video>
+      </div>
+      <a href="#" class="zone-btn">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  </div>
+</section>
+<section class="section leisure-dining">
+  <div class="section-header">
+    <h2>Leisure & Dining</h2>
+    <p>
+      A massive food court with international brands and delicious cuisines.
+      From fast food to fine dining, we have everything for your taste buds!
+    </p>
+  </div>
+
+  <div class="brand-container">
+
+    <!-- Brand 1 -->
+    <div class="brand-card">
+      <h3>Pizza World</h3>
+      <p>Delicious pizzas, cheesy treats and Italian flavors.</p>
+      <ul class="menu-list">
+        <li>Margherita Pizza</li>
+        <li>Pepperoni Pizza</li>
+        <li>Veggie Delight</li>
+        <li>Chocolate Dessert Pizza</li>
+      </ul>
+      <a href="#" class="brand-btn">View Menu</a>
+    </div>
+
+    <!-- Brand 2 -->
+    <div class="brand-card">
+      <h3>Sushi Express</h3>
+      <p>Fresh sushi rolls and authentic Japanese cuisine.</p>
+      <ul class="menu-list">
+        <li>California Roll</li>
+        <li>Salmon Nigiri</li>
+        <li>Veggie Maki</li>
+        <li>Spicy Tuna Roll</li>
+      </ul>
+      <a href="#" class="brand-btn">View Menu</a>
+    </div>
+
+    <!-- Brand 3 -->
+    <div class="brand-card">
+      <h3>Burger Hub</h3>
+      <p>Juicy burgers with a variety of toppings and combos.</p>
+      <ul class="menu-list">
+        <li>Classic Beef Burger</li>
+        <li>Chicken Cheese Burger</li>
+        <li>Veggie Burger</li>
+        <li>Fries & Beverages</li>
+      </ul>
+      <a href="#" class="brand-btn">View Menu</a>
+    </div>
+
+    <!-- Brand 4 -->
+    <div class="brand-card">
+      <h3>Coffee & Desserts</h3>
+      <p>Coffee, pastries, and sweet treats for all ages.</p>
+      <ul class="menu-list">
+        <li>Espresso</li>
+        <li>Cappuccino</li>
+        <li>Chocolate Cake</li>
+        <li>Ice Cream Sundae</li>
+      </ul>
+      <a href="#" class="brand-btn">View Menu</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <h2>What's Up</h2>
+
+  <div class="event-box">
+    <h3>Winter Carnival 2026</h3>
+    <p>Join us for a magical winter celebration with music, lights and special shows.</p>
+  </div>
+
+  <div class="event-box">
+    <h3>Summer Splash Festival</h3>
+    <p>Exciting water rides and live entertainment for all ages.</p>
+  </div>
+
+</section>
+<section class="cta-section">
+  <h2>Ready For An Unforgettable Experience?</h2>
+  <p>Book your tickets today and enjoy a day full of adventure.</p>
+  <a href="#" class="cta-btn-large">Buy Tickets Now</a>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-about">
+      <h2 class="footer-logo">FUN ZONE</h2>
+      <p>
+        FUN ZONE Theme Park delivers world-class entertainment with thrilling rides,
+        immersive attractions and premium dining experiences for families.
+      </p>
+      <!-- SOCIAL MEDIA -->
+      
+  <div class="social-icons">
+  
+  <a href="https://www.facebook.com/" target="_blank" class="facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.instagram.com/" target="_blank" class="instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.youtube.com/" target="_blank" class="youtube">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="mailto:info@funzonepark.com" class="email-icon">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
+</div>
+
+       
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="leisure-dining.html">Leisure & Dining</a></li>
+        <li><a href="park-characters.html">Park Characters</a></li>
+        <li><a href="whats-up.html">What's Up</a></li>
+        <li><a href="park-information.html">Park Information</a></li>
+        <li><a href="business-opportunities.html">Business</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h3>Contact & Location</h3>
+
+      <div class="footer-buttons">
+        <a href="contact.html" class="footer-btn">Contact Us</a>
+
+        <a href="https://www.google.com/maps/search/Fun+Zone+Park+Kuwait+City"
+           target="_blank"
+           class="footer-btn location-btn">
+           View Location
+        </a>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Fun+Zone+Park+Kuwait+City&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <p class="address">
+        📍 Fun Zone Park, Al Tijaria Tower,<br>
+        Kuwait City, Kuwait
+      </p>
+
+      <p class="phone">📞 +965 555 98777</p>
+
+      <p class="email">
+        ✉ <a href="mailto:info@funzonepark.com">info@funzonepark.com</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 FUN ZONE Theme Park | Delivering 360° Entertainment 🌍
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
