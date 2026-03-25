@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Fleet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BODY */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #010514 0%, #000814 50%, #010514 100%);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 20, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 50px;
+            background: rgba(0, 20, 40, 0.98);
+            box-shadow: 0 5px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .logo {
+            color: cyan;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-shadow: 0 0 15px cyan;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            padding: 10px 20px;
+            border-radius: 25px;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 25px cyan;
+            color: cyan;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero .title {
+            font-size: clamp(2.5em, 8vw, 5em);
+            padding: 30px 40px;
+            border-radius: 30px;
+            background: rgba(0, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 40px cyan, inset 0 0 40px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 30px cyan;
+            margin-bottom: 60px;
+            animation: titleFloat 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes titleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .cta-button {
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: 500;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, cyan, #00d4ff);
+            color: #010514;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4);
+            transition: all 0.4s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.6);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:active::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* GALLERY */
+        .section-title {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: cyan;
+            text-shadow: 0 0 20px cyan;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item span {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 15px;
+            color: cyan;
+            font-weight: 500;
+        }
+
+        /* SPECIFICATIONS */
+        table {
+            width: 90%;
+            margin: 0 auto 40px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        th {
+            background: rgba(0, 255, 255, 0.1);
+            color: cyan;
+            font-size: 1.2em;
+        }
+
+        td {
+            background: rgba(1, 17, 34, 0.8);
+        }
+
+        /* FEEDBACK */
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            background: rgba(1, 17, 34, 0.8);
+            padding: 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            outline: none;
+            border-color: cyan;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .feedback-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .feedback-form button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, cyan, #00d4ff);
+            color: #010514;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .feedback-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
+
+        .faq-card {
+            background: rgba(1, 17, 34, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .faq-card.active {
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .faq-question {
+            color: cyan;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            color: #aaf;
+            transition: 0.4s;
+            margin-top: 0;
+        }
+
+        .faq-card.active .faq-answer {
+            max-height: 200px;
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(0, 20, 40, 0.95);
+            padding: 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        footer h3 {
+            color: cyan;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        /* ADVERTISE SECTION */
+        .advertise {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            margin: 50px auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .advertise h3 {
+            color: cyan;
+            margin-bottom: 20px;
+        }
+
+        .advertise p {
+            color: #aaf;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🚤 Marina Fleet</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#gallery">Fleets</a></li>
+            <li><a href="#spec">Specs</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#advertise">Facilities</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="title">MARINA FLEET</div>
+        <a href="#gallery" class="cta-button">Explore Fleets</a>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <h2 class="section-title">Our Fleet Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item luxury"><img
+                    src="https://source.unsplash.com/250x180/?yacht,luxury"><span>Luxury</span></div>
+            <div class="gallery-item sailing"><img
+                    src="https://source.unsplash.com/250x180/?sailing,boat"><span>Sailing</span></div>
+            <div class="gallery-item fishing"><img
+                    src="https://source.unsplash.com/250x180/?fishing,boat"><span>Fishing</span></div>
+            <div class="gallery-item medium"><img
+                    src="https://source.unsplash.com/250x180/?medium,boat"><span>Medium</span></div>
+            <div class="gallery-item small"><img
+                    src="https://source.unsplash.com/250x180/?small,boat"><span>Small</span></div>
+        </div>
+    </section>
+
+    <!-- SPECIFICATIONS -->
+    <section id="spec">
+        <h2 class="section-title">Yacht & Boat Specifications</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Capacity</th>
+                <th>Price/Day</th>
+            </tr>
+            <tr>
+                <td>Luxury Cruiser</td>
+                <td>Luxury</td>
+                <td>10</td>
+                <td>$2000</td>
+            </tr>
+            <tr>
+                <td>Sailing Star</td>
+                <td>Sailing</td>
+                <td>8</td>
+                <td>$1200</td>
+            </tr>
+            <tr>
+                <td>Fishing Pro</td>
+                <td>Fishing</td>
+                <td>6</td>
+                <td>$500</td>
+            </tr>
+        </table>
+        <button onclick="downloadSpecs()">Download Specs</button>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section id="feedback">
+        <h2 class="section-title">Feedback</h2>
+        <div class="feedback-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Email">
+            <textarea rows="4" placeholder="Message"></textarea>
+            <button>Submit Feedback</button>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="section-title">FAQs</h2>
+        <div class="faq-grid">
+            <div class="faq-card">
+                <div class="faq-question">How can I book a yacht?</div>
+                <div class="faq-answer">Fill the inquiry form or contact us directly via email or phone.</div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">Do you provide fishing equipment?</div>
+                <div class="faq-answer">Yes, fully equipped fishing boats are available.</div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-question">Payment methods?</div>
+                <div class="faq-answer">Credit card, PayPal, bank transfer accepted.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVERTISE / FACILITIES -->
+    <section class="advertise" id="advertise">
+        <h3>Our Facilities</h3>
+        <p>Luxury yachts with modern interiors</p>
+        <p>Professional crew and safety equipment</p>
+        <p>Fishing gear and water sports equipment</p>
+        <p>Flexible rental packages and VIP services</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#gallery">Fleets</a></li>
+                <li><a href="#spec">Specs</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#advertise">Facilities</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li>Email: info@marinafleet.com</li>
+                <li>Phone: +123 456 7890</li>
+                <li>Address: Marina Bay, City</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle
+        document.querySelectorAll('.faq-card').forEach(faq => {
+            faq.addEventListener('click', () => { faq.classList.toggle('active'); });
+        });
+
+        // Dummy download
+        function downloadSpecs() {
+            alert("Download functionality can be implemented with server-side PDF generation.");
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+        });
+    </script>
+
+</body>
+
+</html>
